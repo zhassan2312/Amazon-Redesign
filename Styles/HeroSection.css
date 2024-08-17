@@ -1,0 +1,71 @@
+.heroSectionBackground {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1572px;
+    background: linear-gradient(90deg, #E9C165, #F7EDA5); /* Use background instead of background-color */
+    max-height: 453px;
+    margin: 0 auto;
+    border-radius: 0px 0px 50px 50px;
+}
+
+.heroSectionContent
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:16px;
+}
+
+.heroSectionHeading
+{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 455px;
+}
+
+.heroSectionHeading p
+{
+    font-size: 48px;
+    font-weight: Bold;
+    margin: 0;
+}
+
+.heroSectionHeading img
+{
+    width:303px;
+    height:19px;
+    margin-left:auto;
+}
+
+.heroSectionExplore p
+{
+    font-size: 22px;
+    font-weight: 600px;
+    color:#5B5B5B;
+    margin: 0;
+}
+
+.heroSectionContainer
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1188px;
+}
+
+.dotSlider
+{
+    display: flex;
+    gap: 8px;
+}
+
+
+.heroSectionExplore
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+}
