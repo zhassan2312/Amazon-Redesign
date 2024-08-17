@@ -2,52 +2,79 @@
 <html>
     <head>
         <title>Home Page</title>
-        <link rel="stylesheet" type="Styles/HomePage.css" href="Header.css">
-
+        <link rel="stylesheet" type="text/css" href="Styles/Header.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     </head>
     <body>
 
         <!--Header Container Starts Here-->
-        <div class="HeaderContainer">
-            <div class="Header">
-                <div class="Logo">
+        <div class="headerContainer">
+            <div class="header">
+                <div class="logoContainer">
                     <img src="Assets/Images/HomePage/Logo.png" alt="Logo">
                 </div>
                 <div class="locationContainer">
+                    <img class="locationIcon"src="Assets/Icons/Location.svg" alt="Location">
                     <div class="location">
-                        <img src="Assets/Icons/Location.svg" alt="Location">
+                        
                         <p>Location</p>
-                        <img src="Assets/Icons/downIcon.svg" alt="ArrowDown">
+                        <h6>LUXEMBOURG, US</h6>
                     </div>
+                    <img class="downIcon" src="Assets/Icons/downIcon.svg" alt="ArrowDown">
                 </div>
                 <div class="searchContainer">
                     <img src="Assets/Icons/Search.svg" alt="Search">
-                    <input  placeholder="Search for products, brands and more" >
+                    <input  placeholder="Search" >
                 </div>
                 <div class="wishListContainer">
                     <img src="Assets/Icons/WishList.svg" alt="WishList">
                     <p>WishList</p>
                 </div>
                 <div class="cartContainer">
-                    <div class="cart">
                         <img src="Assets/Icons/Cart.svg" alt="Cart">
                         <p>3</p>
-                    </div>
-                    <p>Cart</p>
                 </div>
                 <div class="profileContainer">
                     <div class="imageContainer">
                         <img src="Assets/Images/HomePage/Profile.png" alt="Profile">
                     </div>
-                    <p>Profile</p>
-                    <img src="Assets/Icons/downIcon.svg" alt="ArrowDown">
+                    <p>Joe</p>
+                    <img class="downIcon"src="Assets/Icons/downIcon.svg" alt="ArrowDown">
                 </div>
+            </div>
+            <div class="lineDivider"></div>
+            <!--Sub Header starts from here-->
+            <div class="subHeader">
+                <img src="Assets/Icons/HamburgerMenu.svg" alt="Menu">
+                <p>Men</p>
+                <p>Women</p>
+                <p>Kids</p>
+                <p>Home & Living</p>
+                <p>Electronics</p>
+                <p>Beauty</p>
+                <p>Sports & Fitness</p>
+                <p>Books</p>
+                <p>Music & Games</p>
+                <p>Gift Cards</p>
             </div>
         </div>
         <!--Header Container Ends Here-->
 
+        <div class="heroSectionContainer">
+            <div class="heroSectionContent">
+                <div class="heroSectionHeadng">
+                    <h1>HOME ESSENTIALS</h1>
+                    <img src="Assets/Images/heroSectionGraphic.png" alt="ArrowRight">
+                </div>
+                <div class="heroSectionExplore">
+                    <p>Explore now</p>
+                    <div class="dotSlider">
 
-
-
+                    </div>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
