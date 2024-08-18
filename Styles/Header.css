@@ -35,6 +35,7 @@ body {
     height: 50px;
     border-radius: 12px;
     background-color: #2D2B37;
+    cursor: pointer;
     min-width: 192px;
 }
 
@@ -88,6 +89,7 @@ body {
     border-radius: 12px;
     background-color: #2D2B37;
     min-width: 124px;
+    cursor: pointer;
     justify-content: center;
 }
 
@@ -114,6 +116,7 @@ body {
     background-color: #2D2B37;
     min-width: 50px;
     justify-content: center;
+    cursor: pointer;
     position: relative; /* Add this line */
 }
 
@@ -161,6 +164,7 @@ body {
     gap: 8px;
     height: 50px;
     border-radius: 12px;
+    cursor: pointer;
     justify-content: center;
     width: 96px;
 }
@@ -185,6 +189,7 @@ body {
 
 .subHeader p
 {
+    cursor: pointer;
     font-size: 17px;
     color:#fff;
     margin: 0px;

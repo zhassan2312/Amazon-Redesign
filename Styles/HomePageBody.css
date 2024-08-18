@@ -27,6 +27,7 @@ body
     width: 145px;
     object-fit:contain;
     height: 120px;
+    cursor: pointer;
 }
 
 .categoriesOfMajorSection
@@ -181,6 +182,8 @@ body
     padding:0 8px;
     box-sizing: border-box;
     border-radius: 12px;
+    cursor: pointer;
+
 }
 
 .productAddToCartContainer
@@ -197,6 +200,7 @@ body
     height: 50px;
     width: 50px;
     border-radius: 12px;
+    cursor: pointer;
 }
 
 .wishListButton
@@ -206,6 +210,7 @@ body
     color:#Fff;
     height: 50px;
     width: 50px;
+    cursor: pointer;
     border-radius: 12px;
 }
 
@@ -215,4 +220,6 @@ body
     width: 306px;
     height: 306px;
     object-fit: contain;
+    cursor: pointer;
+
 }
