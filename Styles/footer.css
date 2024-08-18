@@ -1,0 +1,48 @@
+.footerContainer
+{
+    background-color: #1C1A23;
+    width: 100%;
+}
+
+.footer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1480px;
+    gap:128px;
+    margin: 0 auto;
+    padding:64px 0px;
+}
+
+.footerLogo
+{
+    width:260px;
+    height: 108px;
+    object-fit: contain;
+}
+
+.footerLink
+{
+   color:#4A4A4A ;
+   margin: 0px;
+   font-size: 16px;
+   font-weight: 500;
+}
+
+.footerHeading
+{
+    color: #FFFFFF;
+    font-size: 19px;
+    font-weight: 300;
+   margin: 0px;
+
+}
+
+
+.footerLinks
+{
+    display: flex;
+    gap:16px;
+    flex-direction: column;
+}

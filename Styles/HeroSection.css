@@ -4,7 +4,7 @@
     align-items: center;
     max-width: 1572px;
     background: linear-gradient(90deg, #E9C165, #F7EDA5); /* Use background instead of background-color */
-    max-height: 453px;
+    height: 453px;
     margin: 0 auto;
     border-radius: 0px 0px 50px 50px;
 }
@@ -53,6 +53,7 @@
     justify-content: space-between;
     align-items: center;
     max-width: 1188px;
+    width: 100%;
 }
 
 .dotSlider
