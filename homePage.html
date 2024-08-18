@@ -5,12 +5,15 @@
         <link rel="stylesheet" type="text/css" href="Styles/Header.css">
         <link rel="stylesheet" type="text/css" href="Styles/HeroSection.css">
         <link rel="stylesheet" type="text/css" href="Styles/HomePageBody.css">
+        <link rel="stylesheet" type="text/css" href="Styles/sideBar.css">
+        <link rel="stylesheet" type="text/css" href="Styles/searchBar.css">
         <link rel="stylesheet" type="text/css" href="Styles/footer.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     
-        <script src="Scripts/SideBar.js"></script>
+        <script src="Scripts/searchBar.js"></script>
+        <script src="Scripts/sideBar.js"></script>
     
     </head>
     <body>
@@ -30,10 +33,11 @@
                     </div>
                     <img class="downIcon" src="Assets/Icons/downIcon.svg" alt="ArrowDown">
                 </div>
-                <div class="searchContainer">
+                <form class="searchContainer">
+                    <label for="searchBar" class="visually-hidden">Search</label>
                     <img src="Assets/Icons/Search.svg" alt="Search">
-                    <input  placeholder="Search" >
-                </div>
+                    <input id="searchBar" placeholder="Search" type="text">
+                </form>
                 <div class="wishListContainer">
                     <img src="Assets/Icons/WishList.svg" alt="WishList">
                     <p>WishList</p>
