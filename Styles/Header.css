@@ -1,6 +1,6 @@
 .logoContainer
 {
-    width: 172px;
+    min-width: 172px;
     height: 65px;
 }
 
@@ -19,6 +19,7 @@ body {
     margin-top: 12px;
     display: flex;
     justify-content: space-between;
+    gap:8px;
     align-items: center;
     max-width: 1440px;
     width: 100%;
@@ -30,11 +31,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 8px;
+    gap: 4px;
     height: 50px;
     border-radius: 12px;
     background-color: #2D2B37;
-    width: 192px;
+    min-width: 192px;
 }
 
 .locationIcon
@@ -77,18 +78,19 @@ body {
 }
 
 
-.searchContainer
-{
+.searchContainer {
     display: flex;
     align-items: center;
     gap: 8px;
     height: 50px;
-    padding:0px 16px;
+    padding: 0px 16px;
     border-radius: 12px;
     background-color: #2D2B37;
+    flex-grow: 1; /* Allow the search container to grow */
     max-width: 691px;
     box-sizing: border-box;
-    width:100%;
+    width: 100%; /* Use 100% width to make it responsive */
+    min-width: 200px; /* Set a minimum width to prevent it from becoming too small */
 }
 
 .searchContainer input {
@@ -118,8 +120,7 @@ body {
     height:50px;
     border-radius: 12px;
     background-color: #2D2B37;
-    width: 119px;
-    box-sizing: border-box;
+    min-width: 124px;
     justify-content: center;
 }
 
@@ -127,7 +128,7 @@ body {
 {
     margin:0px;
     font-size: 15px;
-    font-weight: Bold;
+    font-weight: 600;
     color:#CDCDCD;
 
 }
@@ -144,7 +145,7 @@ body {
     gap: 8px;height: 50px;
     border-radius: 12px;
     background-color: #2D2B37;
-    width: 50px;
+    min-width: 50px;
     justify-content: center;
     position: relative; /* Add this line */
 }
@@ -246,4 +247,87 @@ body {
     flex-direction: column;
     background-color: #1C1A23;
     width: 100%;
+}
+
+
+/* Sidebar styling */
+.sidebar {
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #1C1A23;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidebarContent {
+    display: flex;
+    flex-direction: column;
+    padding: 8px;
+    gap: 8px;
+}
+
+.sidebar h2 {
+    color: #f1f1f1;
+    padding: 8px 8px 8px 32px;
+    font-size: 20px;
+    margin: 0;
+}
+
+.link {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    color: #f1f1f1;
+}
+
+.closeBtn {
+    position: absolute;
+    top: 16px;
+    text-decoration: none;
+    font-size: 34px;
+    color: #fff;
+    display: block;
+    transition: 0.3s;
+    right: 25px;
+    margin-left: 50px;
+}
+
+/* Hamburger menu icon styling */
+.hamburgerMenu {
+    cursor: pointer;
+}
+
+#seeAllButton {
+    padding: 8px 8px 8px 32px; /* Match the padding of the links */
+    font-size: 18px; /* Match the font size of the links */
+    cursor: pointer;
+    background-color: transparent;
+    color: #818181;
+    border: none;
+    text-decoration: underline;
+    display: block; /* Ensure it behaves like a block element */
+    text-align: left; /* Align text to the left */
+}
+
+#categoryLinks a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+#categoryLinks a:hover {
+    color: #f1f1f1;
 }

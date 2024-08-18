@@ -9,6 +9,9 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    
+        <script src="Scripts/SideBar.js"></script>
+    
     </head>
     <body>
 
@@ -50,7 +53,7 @@
             <div class="lineDivider"></div>
             <!--Sub Header starts from here-->
             <div class="subHeader">
-                <img src="Assets/Icons/HamburgerMenu.svg" alt="Menu">
+                <img src="Assets/Icons/HamburgerMenu.svg" alt="Menu" class="hamburgerMenu" onclick="toggleSidebar()">
                 <p>Men</p>
                 <p>Women</p>
                 <p>Kids</p>
@@ -65,6 +68,50 @@
         </div>
         <!--Header Container Ends Here-->
 
+        <!--Sidebar Starts Here-->
+        <div id="sidebar" class="sidebar">
+            <div class="sidebarContent">
+                <a href="#" class="closeBtn" onclick="toggleSidebar()">&times;</a>
+                
+                <h2>Digital Content & Devices</h2>
+                <a class="link"href="#">Amazon Music</a>
+                <a class="link"href="#">Kindle E-reader & Books</a>
+                <a class="link"href="#">Amazon Appstore</a>
+                
+                <h2>Shop by Department</h2>
+                <a class="link"href="#">Electronics</a>
+                <a class="link"href="#">Computers</a>
+                <a class="link"href="#">Smart Home</a>
+                <a class="link"href="#">Arts & Craft</a>
+                <!-- Button to see all categories -->
+                <button id="seeAllButton" onclick="toggleCategories()">See All</button>
+
+                <!-- Container for category links -->
+                <div id="categoryLinks" style="display: none;">
+                    <a class="link"href="#">Phone</a>
+                    <a class="link"href="#">Hard Disk</a>
+                    <a class="link"href="#">RAM</a>
+                    <a class="link"href="#">Graphic Cards</a>
+                </div>
+                <!--Container for category Links end here-->
+                
+                <h2>Programs & Features</h2>
+                <a class="link"href="#">Gift Cards</a>
+                <a class="link"href="#">Shop by interest</a>
+                <a class="link"href="#">Amazon Live</a>
+                <a class="link"href="#">International Shopping</a>
+                <button id="seeAllButton" onclick="toggleCategories()">See All</button>
+                
+                <h2>Grocery & Pets</h2>
+                <a class="link"href="#">Breakfast, Choco & Snacks</a>
+                <a class="link"href="#">Beverages</a>
+                <a class="link"href="#">Food Staples</a>
+                <a class="link"href="#">Laundry & Household</a>
+                <button id="seeAllButton" onclick="toggleCategories()">See All</button>
+            </div>
+        </div>
+        <!--Sidebar Ends Here-->                                                    
+        
         <!--Hero Section Starts here-->
         <div class="heroSectionBackground">
             <div class="heroSectionContainer">
