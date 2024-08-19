@@ -16,10 +16,13 @@
 
 .searchContainer input {
     border: none;
+    
     font-size: 13px;
     background-color: transparent;
     padding: 8px; /* Add padding for better spacing */
     flex-grow: 1; /* Allow the input to take up remaining space */
+    outline: none; /* Remove the default focus outline */
+    caret-color: white;
 }
 
 .searchContainer input::placeholder {
@@ -40,6 +43,7 @@
     padding: 0;
     margin: -1px;
     overflow: hidden;
+    border: none;
     clip: rect(0, 0, 0, 0);
     border: 0;
 }

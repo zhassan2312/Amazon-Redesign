@@ -1,0 +1,383 @@
+.cartBodyContainer
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1540px;
+    margin: 32px auto;
+    width: 100%;
+
+}
+
+.leftCartBodyContainer
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1140px;
+    gap: 16px;
+}
+
+.cartHeader h1
+{
+    font-size: 34px;
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+
+.cartHeader
+{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    width: 100%;
+}
+
+.cartHeader p{
+    font-size: 16px;
+    margin: 0px;
+    cursor: pointer;
+    color: #FF9696;
+}
+
+.cartHeaderOptions
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+}
+
+.cartSearchContainer
+{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: 50px;
+    padding: 0px 16px;
+    border-radius: 12px;
+    background-color: #fff;
+    flex-grow: 1;
+    box-sizing: border-box;
+    max-width: 30%;
+    position: relative;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+
+.cartSearchContainer input
+{
+    border: none;
+    font-size: 13px;
+    background-color: transparent;
+    padding: 8px;
+    flex-grow: 1;
+    outline: none;
+    caret-color: #2D2B37;
+}
+
+
+.cartSearchContainer input::placeholder
+{
+    border: none;
+    color: #A7A7A7;
+}
+
+
+.cartItemCheckBox {
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: none; /* Ensure no border */
+    background-color: #D9D9D9; /* Background color */
+    appearance: none; /* Remove default checkbox styling */
+    -webkit-appearance: none; /* Remove default checkbox styling for WebKit browsers */
+    -moz-appearance: none; /* Remove default checkbox styling for Mozilla browsers */
+    position: relative; /* Position relative to use ::after */
+}
+
+.cartItemCheckBox:checked {
+    background-color: #FF9B02; /* Change background color of checked state */
+}
+
+.cartItemCheckBox:checked::after {
+    content: '✔'; /* Unicode character for tick mark */
+    color: white; /* Color of the tick mark */
+    font-size: 16px; /* Size of the tick mark */
+    position: absolute; /* Position it absolutely within the checkbox */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to be truly centered */
+}
+
+
+.cartItemContainer
+{
+    display: flex;
+    box-sizing: border-box;
+    padding: 16px;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.cartItem
+{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.cartItemImgContainer
+{
+    width: 173px;
+    height: 173px;
+}
+.cartItemImgContainer img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.cartItemDetails
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+    width: 100%;
+}
+
+.cartItemName
+{
+    font-size: 19px;
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+
+.cartItemAvailibility
+{
+    font-size: 14px;
+    color: #57A842;
+    margin: 0px;
+}
+
+.cartItemDeliveryInfo
+{
+    font-size: 14px;
+    color: #9D9D9D;
+    margin: 0px;
+}
+
+.cartItemPrice {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    gap: 4px;
+    font-weight: bold;
+    color: #000;
+    margin: 0; /* Simplified margin */
+}
+
+.cartItemPrice span {
+    font-size: 30px;
+    color: #FF9B02; /* Only override the color */
+}
+
+.cartItemFreeReturnOption
+{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+}
+
+
+.cartItemFreeReturnOption p
+{
+    font-size: 14px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+.cartItemFreeReturnOption img
+{
+    width: 12px;
+    height: 12px;
+}
+
+
+.cartItemGiftCheckBox {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    border: none; /* Ensure no border */
+    background-color: #D9D9D9; /* Background color */
+    appearance: none; /* Remove default checkbox styling */
+    -webkit-appearance: none; /* Remove default checkbox styling for WebKit browsers */
+    -moz-appearance: none; /* Remove default checkbox styling for Mozilla browsers */
+    position: relative; /* Position relative to use ::after */
+}
+
+.cartItemGiftCheckBox:checked {
+    background-color: #FF9B02; /* Change background color of checked state */
+}
+
+.cartItemGiftCheckBox:checked::after {
+    content: '✔'; /* Unicode character for tick mark */
+    color: white; /* Color of the tick mark */
+    font-size: 16px; /* Size of the tick mark */
+    position: absolute; /* Position it absolutely within the checkbox */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to be truly centered */
+}
+
+
+.cartItemGiftCheckContainer
+{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.cartItemGiftCheckContainer label
+{
+    font-size: 12px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+.cartItemGiftCheckContainer a
+{
+    font-size: 14px;
+    color: #0025A8;
+}
+
+.cartitemVariantInfo
+{
+    font-size: 14px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+.cartItemButtonContainer
+{
+    display: flex;
+    justify-content: start;
+    gap: 24px;
+    align-items: center;
+}
+
+.cartItemQuantityContainer
+{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.cartItemQuantityButton
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FF9B02;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.cartItemQuantityButton:hover
+{
+    background-color: #feb4b4;
+    color: #fff;
+}
+
+.cartItemQuantityInput
+{
+    width: 24px;
+    height: 24px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    font-weight: bold;
+}
+
+.cartItemQuantityInput::-webkit-inner-spin-button,
+.cartItemQuantityInput::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.cartItemButtonContainerDivider
+{
+    width: 1px;
+    height: 20px;
+    background-color: #D9D9D9;
+}
+
+.cartItemDeleteButton,
+.cartItemSaveButton,
+.cartItemCompareButton,
+.cartItemShareButton
+{
+    font-size: 14px;
+    color: #9D9D9D;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.cartItemSubTotalContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 16px;
+    width: 100%;
+}
+
+.cartItemHorizontalDivider
+{
+    width: 100%;
+    height: 4px;
+    background-color: #D9D9D9;
+}
+
+.cartItemSubTotal
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.cartSubTotal
+{
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+.cartSubTotalHeading
+{
+    font-size: 16px;
+    color: #4A4A4A;
+    margin: 0px;
+}

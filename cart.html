@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Cart</title>
+        <link rel="stylesheet" type="text/css" href="Styles/Header.css">
+        <link rel="stylesheet" type="text/css" href="Styles/searchBar.css">
+        <link rel="stylesheet" type="text/css" href="Styles/sidebar.css">
+        <link rel="stylesheet" type="text/css" href="Styles/cartItem.css">
+
+        
+        
+        <script src="Scripts/searchBar.js"></script>
+        <script  src="Scripts/sideBar.js"></script>
+        <script type="module" src="Scripts/amazon.js"></script>
+    </head>
+    <body>
+
+        <!--Header Container Starts Here-->
+        <div class="headerContainer">
+            <div class="header">
+                <div class="logoContainer">
+                    <img src="Assets/Images/HomePage/Logo.png" alt="Logo">
+                </div>
+                <div class="locationContainer">
+                    <img class="locationIcon"src="Assets/Icons/Location.svg" alt="Location">
+                    <div class="location">
+                        
+                        <p>Location</p>
+                        <h6>LUXEMBOURG, US</h6>
+                    </div>
+                    <img class="downIcon" src="Assets/Icons/downIcon.svg" alt="ArrowDown">
+                </div>
+                <form class="searchContainer">
+                    <label for="searchBar" class="visually-hidden">Search</label>
+                    <img src="Assets/Icons/Search.svg" alt="Search">
+                    <input id="searchBar" placeholder="Search" type="text">
+                </form>
+                <div class="wishListContainer">
+                    <img src="Assets/Icons/WishList.svg" alt="WishList">
+                    <p>WishList</p>
+                </div>
+                <div class="cartContainer">
+                        <img src="Assets/Icons/Cart.svg" alt="Cart">
+                        <p>3</p>
+                </div>
+                <div class="profileContainer">
+                    <div class="imageContainer">
+                        <img src="Assets/Images/HomePage/Profile.png" alt="Profile">
+                    </div>
+                    <p>Joe</p>
+                    <img class="downIcon"src="Assets/Icons/downIcon.svg" alt="ArrowDown">
+                </div>
+            </div>
+            <div class="lineDivider"></div>
+            <!--Sub Header starts from here-->
+            <div class="subHeader">
+                <img src="Assets/Icons/HamburgerMenu.svg" alt="Menu" class="hamburgerMenu" onclick="toggleSidebar()">
+                <p>Men</p>
+                <p>Women</p>
+                <p>Kids</p>
+                <p>Home & Living</p>
+                <p>Electronics</p>
+                <p>Beauty</p>
+                <p>Sports & Fitness</p>
+                <p>Books</p>
+                <p>Music & Games</p>
+                <p>Gift Cards</p>
+            </div>
+        </div>
+        <!--Header Container Ends Here-->
+
+        <!--Sidebar Starts Here-->
+        <div id="sidebar" class="sidebar">
+            <div class="sidebarContent">
+                <a href="#" class="closeBtn" onclick="toggleSidebar()">&times;</a>
+                
+                <h2>Digital Content & Devices</h2>
+                <a class="link"href="#">Amazon Music</a>
+                <a class="link"href="#">Kindle E-reader & Books</a>
+                <a class="link"href="#">Amazon Appstore</a>
+                
+                <h2>Shop by Department</h2>
+                <a class="link"href="#">Electronics</a>
+                <a class="link"href="#">Computers</a>
+                <a class="link"href="#">Smart Home</a>
+                <a class="link"href="#">Arts & Craft</a>
+                <!-- Button to see all categories -->
+                <button id="seeAllButton" onclick="toggleCategories()">See All</button>
+
+                <!-- Container for category links -->
+                <div id="categoryLinks" style="display: none;">
+                    <a class="link"href="#">Phone</a>
+                    <a class="link"href="#">Hard Disk</a>
+                    <a class="link"href="#">RAM</a>
+                    <a class="link"href="#">Graphic Cards</a>
+                </div>
+                <!--Container for category Links end here-->
+                
+                <h2>Programs & Features</h2>
+                <a class="link"href="#">Gift Cards</a>
+                <a class="link"href="#">Shop by interest</a>
+                <a class="link"href="#">Amazon Live</a>
+                <a class="link"href="#">International Shopping</a>
+                <button id="seeAllButton" onclick="toggleCategories()">See All</button>
+                
+                <h2>Grocery & Pets</h2>
+                <a class="link"href="#">Breakfast, Choco & Snacks</a>
+                <a class="link"href="#">Beverages</a>
+                <a class="link"href="#">Food Staples</a>
+                <a class="link"href="#">Laundry & Household</a>
+                <button id="seeAllButton" onclick="toggleCategories()">See All</button>
+            </div>
+        </div>
+        <!--Sidebar Ends Here-->                                                    
+        
+        <div class="cartBodyContainer">
+            <div class="leftCartBodyContainer">
+                <div class="cartHeader">
+                    <h1 >Shopping Cart</h1>
+                    <div class="cartHeaderOptions">
+                        <p>
+                            Deselect all items
+                        </p>
+                        <div class="cartSearchContainer">
+                            <input type="text" placeholder="Search in Cart">
+                            <img src="Assets/Icons/Search.svg" alt="Search">
+                        </div>
+                    </div>
+                </div>
+
+                <!--Cart Item Container Starts here-->
+
+                <div class="cartItemContainer">
+                    
+                    <div class="cartItem">
+                        <input type="checkbox" id="selectItems" class="cartItemCheckBox">
+                        <div class="cartItemImgContainer">
+                            <img src="Assets/Images/Products/iphone case (1).png" alt="Item1">
+                        </div>
+                        <div class="cartItemDetails">
+                            <p class="cartItemName">Ailun 3Pack Privacy Screen Protector for iPhone 15 Pro Max [6.7 inch]</p>
+                            <p class="cartItemAvailibility">Available</p>
+                            <p class="cartItemDeliveryInfo">FREE delivery Sun, Jul 21 on $35 of items shipped by Amazon</p>
+                            <div class="cartItemFreeReturnOption">
+                                <p>FREE Returns</p>
+                                <img src="Assets/Icons/downIcon.svg" alt="Return">
+                            </div>
+                            <div class="cartItemGiftCheckContainer">
+                                <input type="checkbox" id="giftCheck" class="cartItemGiftCheckBox">
+                                <label for="giftCheck">This is a gift</label>
+                                <a href="#">Learn more</a>
+                            </div>
+                            <p class="cartitemVariantInfo">Size: iPhone 15 Pro Max-6.7 Inch</p>
+                            <div class="cartItemButtonContainer">
+                                <div class="cartItemQuantityContainer">
+                                    <button class="cartItemQuantityButton">-</button>
+                                    <input type="text" value="1" class="cartItemQuantityInput">
+                                    <button class="cartItemQuantityButton">+</button>
+                                </div>
+                                <button class="cartItemDeleteButton">Delete</button>
+                                <div class="cartItemButtonContainerDivider"></div>
+                                <button class="cartItemSaveButton">Save for later</button>
+                                <div class="cartItemButtonContainerDivider"></div>
+                                <button class="cartItemCompareButton">Compare with similar items</button>
+                                <div class="cartItemButtonContainerDivider"></div>
+                                <button class="cartItemShareButton">Share</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <p class="cartItemPrice"> <span style="color: #FF9B02;">$</span>19.99</p>
+                </div>
+                <!--Cart Item Container Ends here-->
+
+                <div class="cartItemSubTotalContainer">
+                    <div class="cartItemHorizontalDivider"></div>
+                    <div class="cartItemSubTotal">
+                        <p class="cartSubTotalHeading">Subtotal (1 item):</p>
+                        <p class="cartSubTotal">$19.99</p>
+                    </div>
+                </div>
+
+
+
+            </div>
+
+            <div class="rightCartBodyContainer">
+
+            </div>
+        </div>
+    </body>
+</html>

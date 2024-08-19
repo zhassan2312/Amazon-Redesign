@@ -4,7 +4,9 @@
     height: 65px;
 }
 
-body {
+body 
+{
+    background-color: #F8F9FF;
     font-family: 'Inter', sans-serif;
 }
 
