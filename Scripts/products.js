@@ -72,7 +72,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         <button class="wishListButton">
                             <img src="Assets/Icons/wishList.svg" alt="wishList">
                         </button>
-                        <button class="cartButton">
+                        <button class="cartButton"
+                        data-product-name="${product.name}">
                             <img src="Assets/Icons/addToCart.svg" alt="Cart">
                         </button>
                     </div>
@@ -89,7 +90,35 @@ document.addEventListener('DOMContentLoaded', function() {
         {
         button.addEventListener('click', () => 
         {
-            alert('Added to cart');
+            const productName= button.dataset.productName;
+            let matchingItem;
+            cart.forEach((item) => 
+            {
+                if (item.name === productName) 
+                {
+                    matchingItem = item;
+                }
+            });
+
+            if (matchingItem) 
+            {
+                matchingItem.quantity += 1;
+            } 
+            else 
+            {
+                cart.push({
+                    name: productName,
+                    quantity: 1
+                });
+            }
+
+            let cartQuantity=0;
+            cart.forEach((item) => 
+            {
+                cartQuantity += item.quantity;
+            });
+
+            document.querySelector('.js-cart-quanity').innerHTML = cartQuantity;
         });
     });
 });

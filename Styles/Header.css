@@ -39,6 +39,10 @@ body {
     min-width: 192px;
 }
 
+.locationContainer:hover {
+    background-color: #3A3845; /* Brighter color */
+}
+
 .locationIcon
 {
     width: 27px;
@@ -93,6 +97,10 @@ body {
     justify-content: center;
 }
 
+.wishListContainer:hover {
+    background-color: #3A3845; /* Brighter color */
+}
+
 .wishListContainer p
 {
     margin:0px;
@@ -120,6 +128,9 @@ body {
     position: relative; /* Add this line */
 }
 
+.cartContainer:hover {
+    background-color: #3A3845; /* Brighter color */
+}
 .cartContainer p {
     position: absolute; /* Change this line */
     top: 4px; /* Adjust this value to position the number above the cart */
@@ -193,6 +204,11 @@ body {
     font-size: 17px;
     color:#fff;
     margin: 0px;
+}
+
+.subHeader p:hover
+{
+    color:#FF9B02;
 }
 
 .subHeader img

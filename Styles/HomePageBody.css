@@ -10,6 +10,7 @@
     max-height: 145px;
 }
 
+
 body
 {
     background-color: #F8F9FF;
@@ -186,6 +187,11 @@ body
 
 }
 
+.productSelectOption:hover
+{
+    background-color: #D9D9D9;
+}
+
 .productAddToCartContainer
 {
     display: flex;
@@ -203,6 +209,11 @@ body
     cursor: pointer;
 }
 
+.cartButton:hover
+{
+    background-color: #ffab2d;
+}
+
 .wishListButton
 {
     border:none;
@@ -212,6 +223,11 @@ body
     width: 50px;
     cursor: pointer;
     border-radius: 12px;
+}
+
+.wishListButton:hover
+{
+    background-color: #B7B7B7;
 }
 
 .singleImageProduct,

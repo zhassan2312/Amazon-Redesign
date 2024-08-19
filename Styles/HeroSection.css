@@ -58,11 +58,20 @@
 
 .dotSlider
 {
+    cursor: pointer;
     display: flex;
     gap: 8px;
 }
+.dotSlider img
+{
+    width: 12px;
+    height: 12px;
+}
 
-
+.dotSlider img:hover
+{
+    transform: scale(1.4);
+}
 .heroSectionExplore
 {
     display: flex;
