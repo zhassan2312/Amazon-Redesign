@@ -1,6 +1,9 @@
-export const cart = 
+export let cart = 
 [
-    
+    {
+        productName: 'Men’s Leather Jacket',
+        quantity: 3
+    }
 ];
 
 
@@ -50,3 +53,7 @@ export function updateCartQuantity()
 
     document.querySelector('.js-cart-quanity').innerHTML = cartQuantity;
 }
+
+
+
+

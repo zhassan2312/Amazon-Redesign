@@ -3,15 +3,17 @@
     <head>
         <title>Cart</title>
         <link rel="stylesheet" type="text/css" href="Styles/Header.css">
+        <link rel="stylesheet" type="text/css" href="Styles/HomePageBody.css">
         <link rel="stylesheet" type="text/css" href="Styles/searchBar.css">
         <link rel="stylesheet" type="text/css" href="Styles/sidebar.css">
-        <link rel="stylesheet" type="text/css" href="Styles/cartItem.css">
+        <link rel="stylesheet" type="text/css" href="Styles/cart.css">
+        <link rel="stylesheet" type="text/css" href="Styles/wishList.css">
 
-        
-        
         <script src="Scripts/searchBar.js"></script>
-        <script  src="Scripts/sideBar.js"></script>
-        <script type="module" src="Scripts/amazon.js"></script>
+        <script src="Scripts/sideBar.js"></script>
+        <script src="Scripts/carousel.js"></script>
+        <script type="module" src="Scripts/cart.js"></script>
+        <script type="module" src="Scripts/checkout.js"></script>
     </head>
     <body>
 
@@ -41,7 +43,7 @@
                 </div>
                 <div class="cartContainer">
                         <img src="Assets/Icons/Cart.svg" alt="Cart">
-                        <p>3</p>
+                        <p class="js-cart-quanity">3</p>
                 </div>
                 <div class="profileContainer">
                     <div class="imageContainer">
@@ -127,50 +129,12 @@
                         </div>
                     </div>
                 </div>
+                
 
-                <!--Cart Item Container Starts here-->
+                <!-- Cart Item Container Starts here -->
+                <div class="cartItemsContainer js-cart-items-container"></div>
 
-                <div class="cartItemContainer">
-                    
-                    <div class="cartItem">
-                        <input type="checkbox" id="selectItems" class="cartItemCheckBox">
-                        <div class="cartItemImgContainer">
-                            <img src="Assets/Images/Products/iphone case (1).png" alt="Item1">
-                        </div>
-                        <div class="cartItemDetails">
-                            <p class="cartItemName">Ailun 3Pack Privacy Screen Protector for iPhone 15 Pro Max [6.7 inch]</p>
-                            <p class="cartItemAvailibility">Available</p>
-                            <p class="cartItemDeliveryInfo">FREE delivery Sun, Jul 21 on $35 of items shipped by Amazon</p>
-                            <div class="cartItemFreeReturnOption">
-                                <p>FREE Returns</p>
-                                <img src="Assets/Icons/downIcon.svg" alt="Return">
-                            </div>
-                            <div class="cartItemGiftCheckContainer">
-                                <input type="checkbox" id="giftCheck" class="cartItemGiftCheckBox">
-                                <label for="giftCheck">This is a gift</label>
-                                <a href="#">Learn more</a>
-                            </div>
-                            <p class="cartitemVariantInfo">Size: iPhone 15 Pro Max-6.7 Inch</p>
-                            <div class="cartItemButtonContainer">
-                                <div class="cartItemQuantityContainer">
-                                    <button class="cartItemQuantityButton">-</button>
-                                    <input type="text" value="1" class="cartItemQuantityInput">
-                                    <button class="cartItemQuantityButton">+</button>
-                                </div>
-                                <button class="cartItemDeleteButton">Delete</button>
-                                <div class="cartItemButtonContainerDivider"></div>
-                                <button class="cartItemSaveButton">Save for later</button>
-                                <div class="cartItemButtonContainerDivider"></div>
-                                <button class="cartItemCompareButton">Compare with similar items</button>
-                                <div class="cartItemButtonContainerDivider"></div>
-                                <button class="cartItemShareButton">Share</button>
-                            </div>
-                        </div>
-                        
-                    </div>
-                    <p class="cartItemPrice"> <span style="color: #FF9B02;">$</span>19.99</p>
-                </div>
-                <!--Cart Item Container Ends here-->
+
 
                 <div class="cartItemSubTotalContainer">
                     <div class="cartItemHorizontalDivider"></div>
@@ -181,11 +145,158 @@
                 </div>
 
 
+                
+                    <div class="wishListHeader">
+                        <h1 >Add items form Wishlist to Cart</h1>
+                    </div>
+                    <!--WishList Item Container Starts here-->
+                    <div class="wishListItemContainer">
+                        
+                        <div class="wishListItem">
+                            
+                            <div class="wishListItemImgContainer">
+                                <img src="Assets/Images/Products/iphone case 2.png" alt="Item1">
+                            </div>
+                            <div class="wishListItemDetails">
+                                <p class="wishListItemName">Maybot Pro Maveric Handled Blue Rubber iPhone 15 Pro Max Cover</p>
+                                <p class="wishListItemAvailibility">Available</p>
+                                <p class="wishListItemDeliveryInfo">FREE delivery Tue, Sep 02 on $18 of items shipped by Amazon</p>
+                                <div class="wishListItemFreeReturnOption">
+                                    <p>FREE Returns</p>
+                                    <img src="Assets/Icons/downIcon.svg" alt="Return">
+                                </div>
+                                <div class="wishListItemGiftCheckContainer">
+                                    <input type="checkbox" id="giftCheck" class="wishListItemGiftCheckBox">
+                                    <label for="giftCheck">This is a gift</label>
+                                    <a href="#">Learn more</a>
+                                </div>
+                                <p class="cartitemVariantInfo">Size: iPhone 15 Pro Max-6.7 Inch</p>
+                                <div class="wishListItemButtonContainer">
+                                    <button class="wishListItemAddToCartButton">Add to Cart <img src="Assets/Icons/addToCart.svg"></button>
+                                    <div class="wishListItemButtonContainerDivider"></div>
+                                    <div class="wishListItemQuantityContainer">
+                                        <button class="wishListItemQuantityButton">-</button>
+                                        <input type="text" value="1" class="wishListItemQuantityInput">
+                                        <button class="wishListItemQuantityButton">+</button>
+                                    </div>
+                                    <div class="wishListItemButtonContainerDivider"></div>
+                                    <button class="wishListItemRemoveButton">Remove Item From WishList</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="cartItemPrice"> <span style="color: #FF9B02;">$</span>9.99</p>
+                    </div>
+                    <!--WishList Item Container Ends here-->
+                    <!--WishList Item Container Starts here-->
+                    <div class="wishListItemContainer">
+                        
+                        <div class="wishListItem">
+                            
+                            <div class="wishListItemImgContainer">
+                                <img src="Assets/Images/Products/iphone case 3.png" alt="Item1">
+                            </div>
+                            <div class="wishListItemDetails">
+                                <p class="wishListItemName">White wooden dressing table with stool | White poslish</p>
+                                <p class="wishListItemAvailibility">Available</p>
+                                <p class="wishListItemDeliveryInfo">FREE delivery Sun, May 30 on $152 of items shipped by Amazon</p>
+                                <div class="wishListItemFreeReturnOption">
+                                    <p>FREE Returns</p>
+                                    <img src="Assets/Icons/downIcon.svg" alt="Return">
+                                </div>
+                                <div class="wishListItemGiftCheckContainer">
+                                    <input type="checkbox" id="giftCheck" class="wishListItemGiftCheckBox">
+                                    <label for="giftCheck">This is a gift</label>
+                                    <a class="wishListItemGiftCheckContainerLink"href="#">Learn more</a>
+                                </div>
+                                <p class="cartitemVariantInfo">Size: iPhone 15 Pro Max-6.7 Inch</p>
+                                <div class="wishListItemButtonContainer">
+                                    <button class="wishListItemAddToCartButton">Add to Cart <img src="Assets/Icons/addToCart.svg"></button>
+                                    <div class="wishListItemButtonContainerDivider"></div>
+                                    <div class="wishListItemQuantityContainer">
+                                        <button class="wishListItemQuantityButton">-</button>
+                                        <input type="text" value="1" class="wishListItemQuantityInput">
+                                        <button class="wishListItemQuantityButton">+</button>
+                                    </div>
+                                    <div class="wishListItemButtonContainerDivider"></div>
+                                    <button class="wishListItemRemoveButton">Remove Item From WishList</button>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <p class="cartItemPrice"> <span style="color: #FF9B02;">$</span>8.99</p>
+                    </div>
+                    <!--WishList Item Container Ends here-->
+
+                    <p class="cartImportantMessage">
+                        The price and availability of items at Amazon.com are subject to change. The Cart is a temporary place to store a list of your items and reflects each item's most recent price. Shopping Cart. <a class="wishListItemGiftCheckContainerLink">Learn more</a>
+                        Do you have a gift card or promotional code? We'll ask you to enter your claim code when it's time to pay.
+                    </p>
+
+                    <div id="forthHomePageBodyContainer" class="homePageProductSectionHeading">
+                        <p>
+                            Players Paradise Starts Here
+                        </p>
+                    </div>
+
+
+                    <!--Carousel starts here-->
+
+                    <div class="carouselWrapper">
+                        <div class="carouselContainer 
+                        js-carousel-cart-container">
+                            
+                        </div>
+                        <div class="carouselSlider">
+                            <div class="carouselSliderIndicator"></div>
+                        </div>
+                    </div>
+                    <!--Carousel ends here-->
+
+
 
             </div>
 
             <div class="rightCartBodyContainer">
-
+                <!---->
+                <div class="cartBillContainer">
+                    <div class="cartBillHeader">
+                        <img class="cartBillInfoIcon"src="Assets/Icons/infoIcon.svg">
+                        <p class="cartBillHeadingText">Add $26.10 of eligible items to your order to qualify for FREE Shipping.</p>
+                    </div>
+                    <button class="cartBillDetailsButton">
+                        Details
+                    </button>
+                    <div class="cartBillSubTotalContainer">
+                        <p class="cartBillSubTotalHeading">Items (3):</p>
+                        <p class="cartBillSubTotal">$290.97</p>
+                    </div>
+                    <div class="cartBillSubTotalContainer">
+                        <p class="cartBillSubTotalHeading">Shipping:</p>
+                        <p class="cartBillSubTotal">$2.90</p>
+                    </div>
+                    <div class="cartBillSubTotalContainer">
+                        <p class="cartBillSubTotalHeading">Total Before Tax:</p>
+                        <p class="cartBillSubTotal">$293.87</p>
+                    </div>
+                    <div class="cartBillSubTotalContainer">
+                        <p class="cartBillSubTotalHeading">Estimated Tax(5%):</p>
+                        <p class="cartBillSubTotal">$29.38</p>
+                    </div>
+                    <div style="height: 2px;"class="cartItemHorizontalDivider"></div>
+                    <div class="cartBillTotalContainer">
+                        <p class="cartBillTotalHeading">Subtotal (1 item):</p>
+                        <p class="cartBillTotal">$323.25</p>
+                    </div>
+                    <div class="wishListItemGiftCheckContainer">
+                        <input type="checkbox" id="giftCheck" class="wishListItemGiftCheckBox">
+                        <label for="giftCheck">This is a gift</label>
+                        
+                    </div>
+                    <button class="proceedToPayButton">
+                        Proceed To Pay
+                    </button>
+                </div>
             </div>
         </div>
     </body>

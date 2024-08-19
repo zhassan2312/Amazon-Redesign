@@ -1,0 +1,319 @@
+.wishListHeader h1
+{
+    font-size: 34px;
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+
+.wishListHeader
+{
+    display: flex;
+    flex-direction: column;
+    gap:8px;
+    width: 100%;
+}
+
+
+
+
+
+.wishListItemContainer
+{
+    display: flex;
+    box-sizing: border-box;
+    padding: 16px;
+    align-items: start;
+    justify-content: space-between;
+    border-radius: 12px;
+    background-color: #fff;
+    width: 100%;
+}
+
+.wishListItem
+{
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    width: 100%;
+}
+
+.wishListItemImgContainer
+{
+    width: 173px;
+    height: 173px;
+}
+.wishListItemImgContainer img
+{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+
+.wishListItemDetails
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 8px;
+    width: 100%;
+}
+
+.wishListItemName
+{
+    font-size: 19px;
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+
+.wishListItemAvailibility
+{
+    font-size: 14px;
+    color: #57A842;
+    margin: 0px;
+}
+
+.wishListItemDeliveryInfo
+{
+    font-size: 14px;
+    color: #9D9D9D;
+    margin: 0px;
+}
+
+.wishListItemPrice {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    gap: 4px;
+    font-weight: bold;
+    color: #000;
+    margin: 0; /* Simplified margin */
+}
+
+.wishListItemPrice span {
+    font-size: 30px;
+    color: #FF9B02; /* Only override the color */
+}
+
+.wishListItemFreeReturnOption
+{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+}
+
+
+.wishListItemFreeReturnOption p
+{
+    font-size: 14px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+.wishListItemFreeReturnOption img
+{
+    width: 12px;
+    height: 12px;
+}
+
+
+.wishListItemGiftCheckBox {
+    width: 12px;
+    height: 12px;
+    cursor: pointer;
+    border-radius: 2px;
+    border: none; /* Ensure no border */
+    background-color: #D9D9D9; /* Background color */
+    appearance: none; /* Remove default checkbox styling */
+    -webkit-appearance: none; /* Remove default checkbox styling for WebKit browsers */
+    -moz-appearance: none; /* Remove default checkbox styling for Mozilla browsers */
+    position: relative; /* Position relative to use ::after */
+}
+
+.wishListItemGiftCheckBox:checked {
+    background-color: #FF9B02; /* Change background color of checked state */
+}
+
+.wishListItemGiftCheckBox:checked::after {
+    content: '✔'; /* Unicode character for tick mark */
+    color: white; /* Color of the tick mark */
+    font-size: 16px; /* Size of the tick mark */
+    position: absolute; /* Position it absolutely within the checkbox */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust position to be truly centered */
+}
+
+
+.wishListItemGiftCheckContainer
+{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.wishListItemGiftCheckContainer label
+{
+    font-size: 12px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+.wishListItemGiftCheckContainerLink
+{
+    font-size: 14px;
+    color: #0025A8;
+    text-decoration: underline;
+}
+
+.wishListitemVariantInfo
+{
+    font-size: 14px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+.wishListItemButtonContainer
+{
+    display: flex;
+    justify-content: start;
+    gap: 24px;
+    align-items: center;
+}
+
+.wishListItemQuantityContainer
+{
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.wishListItemQuantityButton
+{
+    width: 24px;
+    height: 24px;
+    border-radius: 4px;
+    border: none;
+    background-color: #FF9B02;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.wishListItemQuantityButton:hover
+{
+    background-color: #fb9696;
+    color: #fff;
+}
+
+.wishListItemQuantityInput
+{
+    width: 24px;
+    height: 24px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    outline: none;
+    font-weight: bold;
+}
+
+.wishListItemQuantityInput::-webkit-inner-spin-button,
+.wishListItemQuantityInput::-webkit-outer-spin-button
+{
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+
+.wishListItemButtonContainerDivider
+{
+    width: 1px;
+    height: 20px;
+    background-color: #D9D9D9;
+}
+
+.wishListItemDeleteButton,
+.wishListItemSaveButton,
+.wishListItemCompareButton,
+.wishListItemShareButton
+{
+    font-size: 14px;
+    color: #9D9D9D;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.wishListItemSubTotalContainer
+{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 16px;
+    width: 100%;
+}
+
+.wishListItemHorizontalDivider
+{
+    width: 100%;
+    height: 4px;
+    background-color: #D9D9D9;
+}
+
+.wishListItemSubTotal
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0px 16px;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.wishListSubTotal
+{
+    font-size: 24px;
+    font-weight: bold;
+    color: #000;
+    margin: 0px;
+}
+.wishListSubTotalHeading
+{
+    font-size: 16px;
+    color: #4A4A4A;
+    margin: 0px;
+}
+
+
+.wishListItemAddToCartButton
+{
+    display: flex;
+    gap:8px;
+    align-items: center;
+    justify-content: center;
+    background-color: #FF9B02;
+    color: #fff;
+    border:none;
+    border-radius: 12px;
+    padding:8px 16px;
+    font-size: 14px;
+}
+
+.wishListItemAddToCartButton img
+{
+    width: 24px;
+    height: 24px;
+}
+
+.wishListItemRemoveButton
+{
+    font-size: 14px;
+    border:none;
+    background-color: transparent;
+    color:#fb9696;
+    font-weight: bold;
+}
