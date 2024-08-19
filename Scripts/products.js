@@ -1,3 +1,5 @@
+import { cart } from './cart.js';
+
 document.addEventListener('DOMContentLoaded', function() {
     const products = [
         {
