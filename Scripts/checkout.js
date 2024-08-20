@@ -1,21 +1,15 @@
-import { cart } from './cart.js';
-import { popularApparelProducts,iphoneCasesProducts } from './products.js';
+import { cart, addToCart, removeFromCart, updateCartQuantity } from './cart.js';
+import { popularApparelProducts, iphoneCasesProducts } from './products.js';
 
-document.addEventListener('DOMContentLoaded', () => 
-    {
+document.addEventListener('DOMContentLoaded', () => {
     let cartSummaryHTML = '';
     displayIphoneCasesProducts();
     cart.forEach((cartItem) => {
         const productName = cartItem.productName;
         const matchingProduct = popularApparelProducts.find(product => product.name === productName);
 
-        if (!matchingProduct) {
-            console.error(`Product not found: ${productName}`);
-            return;
-        }
-
         cartSummaryHTML += `
-            <div class="cartItemContainer">        
+            <div class="cartItemContainer js-cart-item-container-${matchingProduct.id}">        
                 <div class="cartItem">
                     <input type="checkbox" id="selectItems" class="cartItemCheckBox">
                     <div class="cartItemImgContainer">
@@ -41,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () =>
                                 <input type="text" value="${cartItem.quantity}" class="cartItemQuantityInput">
                                 <button class="cartItemQuantityButton">+</button>
                             </div>
-                            <button class="cartItemDeleteButton">Delete</button>
+                            <button class="cartItemDeleteButton js-cart-item-delete-button" data-product-id="${matchingProduct.id}">Delete</button>
                             <div class="cartItemButtonContainerDivider"></div>
                             <button class="cartItemSaveButton">Save for later</button>
                             <div class="cartItemButtonContainerDivider"></div>
@@ -58,27 +52,27 @@ document.addEventListener('DOMContentLoaded', () =>
 
     document.querySelector('.js-cart-items-container').innerHTML = cartSummaryHTML;
 
-    document.querySelectorAll('.cartButton')
-        .forEach
-        ((button) => 
-            {
-                button.addEventListener
-                ('click', () => 
-                {
-                    const productName= button.dataset.productName;
-                    addToCart(productName);
-                    
-                }
-                );
+    document.querySelectorAll('.cartButton').forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            addToCart(productId);
+        });
+    });
+
+    // Call the function to add event listeners to the cart buttons
+    updateCartQuantity();
+
+    document.querySelectorAll('.js-cart-item-delete-button').forEach((link) => {
+        link.addEventListener('click', () => {
+            const productId = link.dataset.productId;
+            removeFromCart(productId);
+            const container = document.querySelector(`.js-cart-item-container-${productId}`);
+            if (container) {
+                container.remove();
             }
-        );
-        // Call the function to add event listeners to the cart buttons
-        updateCartQuantity();
+        });
+    });
 });
-
-
-
-
 
 function displayIphoneCasesProducts() {
     let productsHTML = '';
@@ -111,7 +105,7 @@ function displayIphoneCasesProducts() {
                         <button class="wishListButton">
                             <img src="Assets/Icons/wishList.svg" alt="wishList">
                         </button>
-                        <button class="cartButton js-cart-button" data-product-name="${product.name}">
+                        <button class="cartButton js-cart-button" data-product-id="${product.id}">
                             <img src="Assets/Icons/addToCart.svg" alt="Cart">
                         </button>
                     </div>
@@ -124,9 +118,7 @@ function displayIphoneCasesProducts() {
     const container = document.querySelector('.js-carousel-cart-container');
     if (container) {
         container.innerHTML = productsHTML;
-        console.log('iPhone cases products displayed');
     } else {
         console.error('Element with class .js-carousel-cart-container not found.');
     }
 }
-

@@ -307,7 +307,7 @@
 
 .cartItemQuantityButton:hover
 {
-    background-color: #feb4b4;
+    background-color: #ffab2d;
     color: #fff;
 }
 
@@ -347,6 +347,14 @@
     border: none;
     background-color: transparent;
     cursor: pointer;
+}
+
+.cartItemDeleteButton:hover,
+.cartItemSaveButton:hover,
+.cartItemCompareButton:hover,
+.cartItemShareButton:hover
+{
+    color: #FF9B02;
 }
 
 .cartItemSubTotalContainer

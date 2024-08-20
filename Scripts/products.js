@@ -1,5 +1,6 @@
 export const popularApparelProducts = [
     {
+        id: "1",
         image: "Assets/Images/HomePage/Leather.png",
         name: "Men’s Leather Jacket",
         rating: {
@@ -10,6 +11,7 @@ export const popularApparelProducts = [
         available: "Available"
     },
     {
+        id: "2",
         image: "Assets/Images/HomePage/Gloves.png",
         name: "Men’s Woolen Gloves",
         rating: {
@@ -20,6 +22,7 @@ export const popularApparelProducts = [
         available: "Available"
     },
     {
+        id: `3`,
         image: "Assets/Images/HomePage/Cap.png",
         name: "Tommy Hilfiger Cap | Woolen",
         rating: {
@@ -30,6 +33,7 @@ export const popularApparelProducts = [
         available: "Available"
     },
     {
+        id: `4`,
         image: "Assets/Images/HomePage/White Jacket.png",
         name: "White Jacket",
         rating: {
@@ -45,6 +49,7 @@ export const popularApparelProducts = [
 export const topSellerBabyProducts = 
 [
     {
+        id: `5`,
         image: "Assets/Images/HomePage/Pampers.png",
         name: "Pampers-Diapers-94pc",
         rating: {
@@ -55,6 +60,7 @@ export const topSellerBabyProducts =
         available: "Available"
     },
     {
+        id: `6`,
         image: "Assets/Images/HomePage/Baby Walker.png",
         name: "Baby Walker",
         rating: {
@@ -65,6 +71,7 @@ export const topSellerBabyProducts =
         available: "Available"
     },
     {
+        id: `7`,
         image: "Assets/Images/HomePage/Baby Shampoo.png",
         name: "Johnson's Baby Shampoo",
         rating: {
@@ -75,6 +82,7 @@ export const topSellerBabyProducts =
         available: "Available"
     },
     {
+        id: `8`,
         image: "Assets/Images/HomePage/Swing.png",
         name: "Baby Electric Swing",
         rating: {
@@ -90,6 +98,7 @@ export const topSellerBabyProducts =
 export const iphoneCasesProducts=
 [
     {
+        id: `9`,
         image: "Assets/Images/Products/iphone case.png",
         name: "Comboproof for iPhone 15 Pro Max Case ...",
         rating: {
@@ -100,6 +109,7 @@ export const iphoneCasesProducts=
         available: "Available"
     },
     {
+        id: `10`,
         image: "Assets/Images/Products/iphone case 2.png",
         name: "Waterproof Case for iPhone 15 Pro...",
         rating: {
@@ -110,7 +120,9 @@ export const iphoneCasesProducts=
         available: "Available"
     },
     {
-        image: "Assets/Images/Products/iphone case .png",
+        id: `11`,
+
+        image: "Assets/Images/Products/iphone case 7.png",
         name: "iPhone 15 Pro Max Clear Case with MagSafe",
         rating: {
             stars: 4,
@@ -120,6 +132,8 @@ export const iphoneCasesProducts=
         available: "Available"
     },
     {
+        id: `12`,
+
         image: "Assets/Images/Products/iphone case 4.png",
         name: "AI Case for iPhone 15 pro max with apple logo hole...",
         rating: {
@@ -130,6 +144,8 @@ export const iphoneCasesProducts=
         available: "Available"
     },
     {
+        id: `13`,
+
         image: "Assets/Images/Products/iphone case 5.png",
         name: "SPIGEN MAGNETIC TOro Armor MagFit Desgin",
         rating: {
