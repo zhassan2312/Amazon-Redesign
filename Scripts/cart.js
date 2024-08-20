@@ -1,11 +1,6 @@
-export let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : 
-[
-    {
-        id:'1',
-        quantity:2
-    }
+export let cart ;
 
-];
+loadFromStorage();
 
 export function addToCart(productId) {
     let matchingItem;
@@ -27,6 +22,16 @@ export function addToCart(productId) {
     saveToStorage();
 }
 
+export function loadFromStorage() {
+    cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [
+        {
+            id:'1',
+            quantity:2
+        }
+    
+    ];
+    updateCartQuantity();
+}
 export function updateCartQuantity() {
     let cartQuantity = 0;
     cart.forEach((item) => {
