@@ -1,31 +1,8 @@
-import { addToCart, updateCartQuantity } from './cart.js';
-import { popularApparelProducts, topSellerBabyProducts } from './products.js';
+import {  iphoneCasesProducts } from '../Models/products.js';
 
-function productSummary(){
-    displayPopularApparelProducts();
-    displayTopSellerBabyProducts();
-
-    document.querySelectorAll('.js-product-cart-button').forEach((button) => {
-        button.addEventListener('click', () => {
-            const productId = button.dataset.productId;
-            addToCart(productId);
-            updateCartQuantity(); // Update cart quantity on homepage
-        });
-    });
-
-    // Call the function to add event listeners to the cart buttons
-    updateCartQuantity();
-
-    // Add event listener to the cart container to open cart.html
-    document.querySelector('.js-cart-button-container').addEventListener('click', () => {
-        window.location.href = 'cart.html';
-    });
-}
-
-function displayPopularApparelProducts() {
+export function displayIphoneCasesProducts() {
     let productsHTML = '';
-
-    popularApparelProducts.forEach((product) => {
+    iphoneCasesProducts.forEach((product) => {
         productsHTML += `
         <div class="productContainer">
             <img class="productImage" src="${product.image}" alt="Product">
@@ -63,19 +40,28 @@ function displayPopularApparelProducts() {
         `;
     });
 
-    const container = document.querySelector('.js-popularApparelProducts-containers');
+    const container = document.querySelector('.js-carousel-cart-container');
     if (container) {
         container.innerHTML = productsHTML;
     } else {
-        console.error('Element with class .js-popularApparelProducts-container not found.');
+        console.error('Element with class .js-carousel-cart-container not found.');
     }
 }
 
-function displayTopSellerBabyProducts() {
-    let productsHTML = '';
 
-    topSellerBabyProducts.forEach((product) => {
-        productsHTML += `
+
+export function displayProducts(products, containerSelector) {
+    const productsHTML = products.map(generateProductHTML).join('');
+    const container = document.querySelector(containerSelector);
+    if (container) {
+        container.innerHTML = productsHTML;
+    } else {
+        console.error(`Element with selector ${containerSelector} not found.`);
+    }
+}
+
+function generateProductHTML(product) {
+    return `
         <div class="productContainer">
             <img class="productImage" src="${product.image}" alt="Product">
             <p class="productName">${product.name}</p>
@@ -89,7 +75,7 @@ function displayTopSellerBabyProducts() {
                     </div>
                     <p class="price">$${(product.priceCents / 100).toFixed(2)}</p>
                 </div>
-                <p class="productAvailibilityText">${product.available}</p>
+                <p class="productAvailabilityText">${product.available}</p>
                 <div class="productButtonContainer">
                     <select class="productSelectOption">
                         <option value="Default">See Options</option>
@@ -109,16 +95,5 @@ function displayTopSellerBabyProducts() {
                 </div>
             </div>
         </div>
-        `;
-    });
-
-    const container = document.querySelector('.js-topSellerBabyProducts-containers');
-    if (container) {
-        container.innerHTML = productsHTML;
-    } else {
-        console.error('Element with class .js-topSellerBabyProducts-container not found.');
-    }
+    `;
 }
-
-
-productSummary();

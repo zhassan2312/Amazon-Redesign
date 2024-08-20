@@ -1,7 +1,10 @@
-import { addToCart, updateCartQuantity, removeFromCart, cart } from './cart.js'; // Assuming getCart is a function that returns the cart array
-import { popularApparelProducts, iphoneCasesProducts,topSellerBabyProducts } from './products.js';
+import { addToCart, updateCartQuantity, removeFromCart, cart } from '../cart.js'; // Assuming getCart is a function that returns the cart array
+import { popularApparelProducts, iphoneCasesProducts,topSellerBabyProducts } from '../products.js';
 
-document.addEventListener('DOMContentLoaded', () => {
+
+
+export function renderOrderSummary()
+{
     displayIphoneCasesProducts();
     displayCartItems();
 
@@ -13,7 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
             displayCartItems(); // Refresh cart display
         });
     });
-});
+}
 
 function displayCartItems() {
     let cartSummaryHTML = '';
@@ -170,4 +173,11 @@ function decreaseQuantity(productId) {
     }
     updateCartQuantity();
     saveToStorage();
+
+    // Update the input box value
+    const inputBox = document.querySelector(`.js-cart-item-container-${productId} .cartItemQuantityInput`);
+    if (inputBox) {
+        inputBox.value = matchingItem ? matchingItem.quantity : 0;
+    }
 }
+
