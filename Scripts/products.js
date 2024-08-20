@@ -156,3 +156,21 @@ export const iphoneCasesProducts=
         available: "Available"
     },
 ];
+
+
+
+export function getProduct(productId)
+{
+    let matchingProduct = popularApparelProducts.find(product => product.id === productId);
+        if(!matchingProduct)
+        {
+            matchingProduct=topSellerBabyProducts.find(product=>product.id===productId);
+            if(!matchingProduct)
+            {
+                matchingProduct=iphoneCasesProducts.find(product=>product.id===productId);
+
+            }
+        }
+
+        return matchingProduct;
+}

@@ -1,7 +1,6 @@
 import { addToCart, updateCartQuantity, removeFromCart, cart } from '../cart.js'; // Assuming getCart is a function that returns the cart array
-import { popularApparelProducts, iphoneCasesProducts,topSellerBabyProducts } from '../products.js';
-
-
+import {  iphoneCasesProducts,getProduct } from '../products.js';
+import { renderPaymentSummary } from './paymentSummary.js';
 
 export function renderOrderSummary()
 {
@@ -14,6 +13,7 @@ export function renderOrderSummary()
             const productId = button.dataset.productId;
             addToCart(productId);
             displayCartItems(); // Refresh cart display
+            renderPaymentSummary();
         });
     });
 }
@@ -22,16 +22,7 @@ function displayCartItems() {
     let cartSummaryHTML = '';
     cart.forEach((cartItem) => {
         const productId = cartItem.id;
-        let matchingProduct = popularApparelProducts.find(product => product.id === productId);
-        if(!matchingProduct)
-        {
-            matchingProduct=topSellerBabyProducts.find(product=>product.id===productId);
-            if(!matchingProduct)
-            {
-                matchingProduct=iphoneCasesProducts.find(product=>product.id===productId);
-
-            }
-        }
+        const matchingProduct=getProduct(productId);
         cartSummaryHTML += `
             <div class="cartItemContainer js-cart-item-container-${matchingProduct.id}">        
                 <div class="cartItem">
@@ -88,6 +79,8 @@ function setupCartEventListeners() {
         button.addEventListener('click', () => {
             const productId = button.dataset.productId;
             removeFromCart(productId);
+            renderPaymentSummary();
+            
             displayCartItems(); // Refresh cart display
         });
     });
@@ -95,6 +88,7 @@ function setupCartEventListeners() {
     document.querySelectorAll('.js-increase-quantity').forEach((button) => {
         button.addEventListener('click', () => {
             const productId = button.dataset.productId;
+            renderPaymentSummary();
             addToCart(productId);
             displayCartItems(); // Refresh cart display
         });
@@ -103,6 +97,7 @@ function setupCartEventListeners() {
     document.querySelectorAll('.js-decrease-quantity').forEach((button) => {
         button.addEventListener('click', () => {
             const productId = button.dataset.productId;
+            renderPaymentSummary();
             decreaseQuantity(productId);
             displayCartItems(); // Refresh cart display
         });

@@ -9,10 +9,8 @@
         <link rel="stylesheet" type="text/css" href="Styles/cart.css">
         <link rel="stylesheet" type="text/css" href="Styles/wishList.css">
 
-        <script src="Scripts/searchBar.js"></script>
         <script src="Scripts/sideBar.js"></script>
         <script src="Scripts/carousel.js"></script>
-        <script src="Scripts/buttonLinks.js"></script>
         <script type="module" src="Scripts/cart.js"></script>
         <script type="module" src="Scripts/checkout/checkout.js"></script>
     </head>
@@ -141,8 +139,8 @@
                 <div class="cartItemSubTotalContainer">
                     <div class="cartItemHorizontalDivider"></div>
                     <div class="cartItemSubTotal">
-                        <p class="cartSubTotalHeading">Subtotal (1 item):</p>
-                        <p class="cartSubTotal">$19.99</p>
+                        <p class="cartSubTotalHeading">Subtotal (<span class="js-subtotal-item">1</span> item):</p>
+                        <p class="cartSubTotal ">$<span class="js-subtotal-text">19.99</span></p>
                     </div>
                 </div>
 
@@ -261,43 +259,8 @@
 
             <div class="rightCartBodyContainer">
                 <!---->
-                <div class="cartBillContainer">
-                    <div class="cartBillHeader">
-                        <img class="cartBillInfoIcon"src="Assets/Icons/infoIcon.svg">
-                        <p class="cartBillHeadingText">Add $26.10 of eligible items to your order to qualify for FREE Shipping.</p>
-                    </div>
-                    <button class="cartBillDetailsButton">
-                        Details
-                    </button>
-                    <div class="cartBillSubTotalContainer">
-                        <p class="cartBillSubTotalHeading">Items (3):</p>
-                        <p class="cartBillSubTotal">$290.97</p>
-                    </div>
-                    <div class="cartBillSubTotalContainer">
-                        <p class="cartBillSubTotalHeading">Shipping:</p>
-                        <p class="cartBillSubTotal">$2.90</p>
-                    </div>
-                    <div class="cartBillSubTotalContainer">
-                        <p class="cartBillSubTotalHeading">Total Before Tax:</p>
-                        <p class="cartBillSubTotal">$293.87</p>
-                    </div>
-                    <div class="cartBillSubTotalContainer">
-                        <p class="cartBillSubTotalHeading">Estimated Tax(5%):</p>
-                        <p class="cartBillSubTotal">$29.38</p>
-                    </div>
-                    <div style="height: 2px;"class="cartItemHorizontalDivider"></div>
-                    <div class="cartBillTotalContainer">
-                        <p class="cartBillTotalHeading">Subtotal (1 item):</p>
-                        <p class="cartBillTotal">$323.25</p>
-                    </div>
-                    <div class="wishListItemGiftCheckContainer">
-                        <input type="checkbox" id="giftCheck" class="wishListItemGiftCheckBox">
-                        <label for="giftCheck">This is a gift</label>
-                        
-                    </div>
-                    <button class="proceedToPayButton">
-                        Proceed To Pay
-                    </button>
+                <div class="cartBillContainer js-cart-bill-container">
+                    
                 </div>
             </div>
         </div>

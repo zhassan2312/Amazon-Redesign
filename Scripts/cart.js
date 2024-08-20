@@ -1,4 +1,11 @@
-export let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
+export let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : 
+[
+    {
+        id:'1',
+        quantity:2
+    }
+
+];
 
 export function addToCart(productId) {
     let matchingItem;
