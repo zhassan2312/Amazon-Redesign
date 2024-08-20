@@ -1,13 +1,34 @@
-import { cart, addToCart, removeFromCart, updateCartQuantity } from './cart.js';
-import { popularApparelProducts, iphoneCasesProducts } from './products.js';
+import { addToCart, updateCartQuantity, removeFromCart, cart } from './cart.js'; // Assuming getCart is a function that returns the cart array
+import { popularApparelProducts, iphoneCasesProducts,topSellerBabyProducts } from './products.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-    let cartSummaryHTML = '';
     displayIphoneCasesProducts();
-    cart.forEach((cartItem) => {
-        const productName = cartItem.productName;
-        const matchingProduct = popularApparelProducts.find(product => product.name === productName);
+    displayCartItems();
 
+    // Event listener for adding products to the cart
+    document.querySelectorAll('.js-product-cart-button').forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            addToCart(productId);
+            displayCartItems(); // Refresh cart display
+        });
+    });
+});
+
+function displayCartItems() {
+    let cartSummaryHTML = '';
+    cart.forEach((cartItem) => {
+        const productId = cartItem.id;
+        let matchingProduct = popularApparelProducts.find(product => product.id === productId);
+        if(!matchingProduct)
+        {
+            matchingProduct=topSellerBabyProducts.find(product=>product.id===productId);
+            if(!matchingProduct)
+            {
+                matchingProduct=iphoneCasesProducts.find(product=>product.id===productId);
+
+            }
+        }
         cartSummaryHTML += `
             <div class="cartItemContainer js-cart-item-container-${matchingProduct.id}">        
                 <div class="cartItem">
@@ -31,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         <p class="cartitemVariantInfo">Size: M</p>
                         <div class="cartItemButtonContainer">
                             <div class="cartItemQuantityContainer">
-                                <button class="cartItemQuantityButton">-</button>
+                                <button class="cartItemQuantityButton js-decrease-quantity" data-product-id="${matchingProduct.id}">-</button>
                                 <input type="text" value="${cartItem.quantity}" class="cartItemQuantityInput">
-                                <button class="cartItemQuantityButton">+</button>
+                                <button class="cartItemQuantityButton js-increase-quantity" data-product-id="${matchingProduct.id}">+</button>
                             </div>
                             <button class="cartItemDeleteButton js-cart-item-delete-button" data-product-id="${matchingProduct.id}">Delete</button>
                             <div class="cartItemButtonContainerDivider"></div>
@@ -50,29 +71,40 @@ document.addEventListener('DOMContentLoaded', () => {
         `;
     });
 
-    document.querySelector('.js-cart-items-container').innerHTML = cartSummaryHTML;
+    const container = document.querySelector('.js-cart-items-container');
+    if (container) {
+        container.innerHTML = cartSummaryHTML;
+        setupCartEventListeners(); // Set up event listeners for cart items
+    } else {
+        console.error('Element with class .js-cart-items-container not found.');
+    }
+}
 
-    document.querySelectorAll('.cartButton').forEach((button) => {
+function setupCartEventListeners() {
+    document.querySelectorAll('.js-cart-item-delete-button').forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            removeFromCart(productId);
+            displayCartItems(); // Refresh cart display
+        });
+    });
+
+    document.querySelectorAll('.js-increase-quantity').forEach((button) => {
         button.addEventListener('click', () => {
             const productId = button.dataset.productId;
             addToCart(productId);
+            displayCartItems(); // Refresh cart display
         });
     });
 
-    // Call the function to add event listeners to the cart buttons
-    updateCartQuantity();
-
-    document.querySelectorAll('.js-cart-item-delete-button').forEach((link) => {
-        link.addEventListener('click', () => {
-            const productId = link.dataset.productId;
-            removeFromCart(productId);
-            const container = document.querySelector(`.js-cart-item-container-${productId}`);
-            if (container) {
-                container.remove();
-            }
+    document.querySelectorAll('.js-decrease-quantity').forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            decreaseQuantity(productId);
+            displayCartItems(); // Refresh cart display
         });
     });
-});
+}
 
 function displayIphoneCasesProducts() {
     let productsHTML = '';
@@ -105,7 +137,7 @@ function displayIphoneCasesProducts() {
                         <button class="wishListButton">
                             <img src="Assets/Icons/wishList.svg" alt="wishList">
                         </button>
-                        <button class="cartButton js-cart-button" data-product-id="${product.id}">
+                        <button class="cartButton js-product-cart-button" data-product-id="${product.id}">
                             <img src="Assets/Icons/addToCart.svg" alt="Cart">
                         </button>
                     </div>
@@ -121,4 +153,21 @@ function displayIphoneCasesProducts() {
     } else {
         console.error('Element with class .js-carousel-cart-container not found.');
     }
+}
+
+function decreaseQuantity(productId) {
+    let matchingItem;
+    cart.forEach((cartItem) => {
+        if (cartItem.id === productId) {
+            matchingItem = cartItem;
+        }
+    });
+
+    if (matchingItem && matchingItem.quantity > 1) {
+        matchingItem.quantity -= 1;
+    } else {
+        removeFromCart(productId);
+    }
+    updateCartQuantity();
+    saveToStorage();
 }

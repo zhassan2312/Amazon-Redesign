@@ -1,10 +1,4 @@
-export let cart = [
-    {
-        id: '1', // Add a unique id
-        productName: 'Men’s Leather Jacket',
-        quantity: 3
-    }
-];
+export let cart = localStorage.getItem('cart') ? JSON.parse(localStorage.getItem('cart')) : [];
 
 export function addToCart(productId) {
     let matchingItem;
@@ -22,6 +16,8 @@ export function addToCart(productId) {
             quantity: 1
         });
     }
+    updateCartQuantity(); // Update cart quantity after adding an item
+    saveToStorage();
 }
 
 export function updateCartQuantity() {
@@ -30,10 +26,21 @@ export function updateCartQuantity() {
         cartQuantity += item.quantity;
     });
 
-    document.querySelector('.js-cart-quanity').innerHTML = cartQuantity;
+    const cartQuantityElement = document.querySelector('.js-cart-quantity');
+    if (cartQuantityElement) {
+        cartQuantityElement.innerHTML = cartQuantity;
+    } else {
+        console.error('Element with class .js-cart-quantity not found.');
+    }
 }
 
 export function removeFromCart(productId) {
     const updatedCart = cart.filter(cartItem => cartItem.id !== productId);
     cart = updatedCart;
+    updateCartQuantity(); // Update cart quantity after removing an item
+    saveToStorage();
+}
+
+function saveToStorage() {
+    localStorage.setItem('cart', JSON.stringify(cart));
 }

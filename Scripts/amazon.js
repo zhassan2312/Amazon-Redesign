@@ -1,40 +1,28 @@
+import { addToCart, updateCartQuantity } from './cart.js';
+import { popularApparelProducts, topSellerBabyProducts } from './products.js';
 
-import { cart,addToCart,updateCartQuantity } from './cart.js';
-import { popularApparelProducts,topSellerBabyProducts } from './products.js';
+document.addEventListener('DOMContentLoaded', () => {
+    displayPopularApparelProducts();
+    displayTopSellerBabyProducts();
 
+    document.querySelectorAll('.js-product-cart-button').forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+            addToCart(productId);
+            updateCartQuantity(); // Update cart quantity on homepage
+        });
+    });
 
+    // Call the function to add event listeners to the cart buttons
+    updateCartQuantity();
 
-document.addEventListener
-('DOMContentLoaded', function() 
-    {
-        
+    // Add event listener to the cart container to open cart.html
+    document.querySelector('.js-cart-button-container').addEventListener('click', () => {
+        window.location.href = 'cart.html';
+    });
+});
 
-        displayPopularApparelProducts();
-        displayTopSellerBabyProducts();
-        document.querySelectorAll('.cartButton')
-        .forEach
-        ((button) => 
-            {
-                button.addEventListener
-                ('click', () => 
-                {
-                    const productName= button.dataset.productName;
-                    addToCart(productName);
-                    
-                }
-                );
-            }
-        );
-        // Call the function to add event listeners to the cart buttons
-        updateCartQuantity();
-    }
-);
-    
-
-
-
-function displayPopularApparelProducts() 
-{
+function displayPopularApparelProducts() {
     let productsHTML = '';
 
     popularApparelProducts.forEach((product) => {
@@ -65,8 +53,7 @@ function displayPopularApparelProducts()
                         <button class="wishListButton">
                             <img src="Assets/Icons/wishList.svg" alt="wishList">
                         </button>
-                        <button class="cartButton"
-                        data-product-name="${product.name}">
+                        <button class="cartButton js-product-cart-button" data-product-id="${product.id}">
                             <img src="Assets/Icons/addToCart.svg" alt="Cart">
                         </button>
                     </div>
@@ -76,11 +63,15 @@ function displayPopularApparelProducts()
         `;
     });
 
-    document.querySelector('.js-popularApparelProducts-containers').innerHTML = productsHTML;
+    const container = document.querySelector('.js-popularApparelProducts-containers');
+    if (container) {
+        container.innerHTML = productsHTML;
+    } else {
+        console.error('Element with class .js-popularApparelProducts-container not found.');
+    }
 }
 
-function displayTopSellerBabyProducts() 
-{
+function displayTopSellerBabyProducts() {
     let productsHTML = '';
 
     topSellerBabyProducts.forEach((product) => {
@@ -111,8 +102,7 @@ function displayTopSellerBabyProducts()
                         <button class="wishListButton">
                             <img src="Assets/Icons/wishList.svg" alt="wishList">
                         </button>
-                        <button class="cartButton"
-                        data-product-name="${product.name}">
+                        <button class="cartButton js-product-cart-button" data-product-id="${product.id}">
                             <img src="Assets/Icons/addToCart.svg" alt="Cart">
                         </button>
                     </div>
@@ -122,7 +112,10 @@ function displayTopSellerBabyProducts()
         `;
     });
 
-    document.querySelector('.js-topSellerBabyProducts-containers').innerHTML = productsHTML;
+    const container = document.querySelector('.js-topSellerBabyProducts-containers');
+    if (container) {
+        container.innerHTML = productsHTML;
+    } else {
+        console.error('Element with class .js-topSellerBabyProducts-container not found.');
+    }
 }
-
-
