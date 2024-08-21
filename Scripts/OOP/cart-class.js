@@ -5,12 +5,12 @@ export class Cart {
         this.loadFromStorage();
     }
 
-    addToCart(productId) {
+    addToCart(productId,productVariant) {
         let matchingItem = this.cart.find(cartItem => cartItem.id === productId);
         if (matchingItem) {
             matchingItem.quantity += 1;
         } else {
-            this.cart.push({ id: productId, quantity: 1 });
+            this.cart.push({ id: productId, quantity: 1,variant:productVariant });
         }
         this.updateCartQuantity();
         this.saveToStorage();
